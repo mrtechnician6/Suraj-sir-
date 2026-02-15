@@ -1,0 +1,89 @@
+:root {
+    --math-blue: #3498db;
+    --text-color: #f5f5f5;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: #1a1a1a;
+    font-family: 'Mukta', sans-serif;
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+/* Mathematical Background Decoration */
+#math-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/graphy.png');
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.stage {
+    display: none;
+    width: 100%; height: 100vh;
+    justify-content: center; align-items: center;
+    position: absolute;
+}
+
+.stage.active { display: flex; animation: fadeIn 0.8s ease-in-out; }
+
+/* Math Card Styling */
+.math-card {
+    background: rgba(25, 25, 25, 0.9);
+    border: 1px solid var(--math-blue);
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%; max-width: 450px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(52, 152, 219, 0.3);
+}
+
+.teacher-img {
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--math-blue);
+    margin-bottom: 20px;
+}
+
+.pulse-blue { box-shadow: 0 0 20px var(--math-blue); }
+
+h2 { font-family: 'Orbitron'; color: var(--math-blue); margin-bottom: 15px; }
+
+p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; color: #ddd; }
+
+/* Buttons */
+.math-btn {
+    background: var(--math-blue);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-family: 'Orbitron';
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.math-btn:hover { background: #2980b9; transform: translateY(-2px); }
+
+.wa-btn {
+    display: block;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Loading Bar */
+.bar-bg { width: 100%; height: 8px; background: #333; border-radius: 4px; overflow: hidden; margin: 15px 0; }
+#progress-bar { width: 0%; height: 100%; background: var(--math-blue); transition: width 4s linear; }
+.hidden { display: none; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
